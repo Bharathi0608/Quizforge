@@ -27,7 +27,7 @@ const Signup = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
+      const res = await fetch("https://quizforge-7c83.onrender.com/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -45,7 +45,7 @@ const Signup = () => {
       if (data.message) {
         toast({ title: "Account created 🎉" });
 
-        const loginRes = await fetch("http://localhost:5000/api/auth/login", {
+        const loginRes = await fetch("https://quizforge-7c83.onrender.com/api/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

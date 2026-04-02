@@ -1818,7 +1818,7 @@ if (selected === null && question) {
   try {
     console.log("🚀 Sending score...");
 
-    const res = await fetch("http://127.0.0.1:5000/api/score/add", {
+    const res = await fetch("https://quizforge-7c83.onrender.com/api/score/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

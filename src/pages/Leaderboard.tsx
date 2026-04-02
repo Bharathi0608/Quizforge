@@ -11,7 +11,7 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchLeaderboard = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/score");
+        const res = await fetch("https://quizforge-7c83.onrender.com/api/score");
         const data = await res.json();
 
         const formatted = data.map((item) => ({
