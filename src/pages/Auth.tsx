@@ -69,7 +69,8 @@ const Auth = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
+      const res = await fetch("https://quizforge-7c83.onrender.com/api/auth/register", {
+      // const res = await fetch("http://localhost:5000/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
