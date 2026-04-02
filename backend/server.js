@@ -8,6 +8,10 @@ app.use(cors());
 // Middleware
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("QuizForge Backend is running 🚀");
+});
+
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
