@@ -267,6 +267,39 @@ router.post("/register", async (req, res) => {
 
     await user.save();
 
+
+    router.post("/register", async (req, res) => {
+  const { name, email, password } = req.body;
+
+  try {
+
+    const existingUser = await User.findOne({ email });
+if (existingUser) {
+  return res.status(400).json({ msg: "User already exists" });
+}
+
+
+
+    const hashed = await bcrypt.hash(password, 10);
+
+    const user = new User({
+      name,
+      email,
+      password: hashed
+    });
+
+    await user.save();
+
+    // ✅ ADD THIS
+    res.json({ message: "User registered successfully" });
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ msg: "Server error" });
+  }
+});
+
+
     res.json({ message: "User registered successfully" });
   } catch (err) {
     res.status(500).json({ msg: "Error registering user" });
