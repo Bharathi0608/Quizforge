@@ -1,7 +1,8 @@
 // API Base URL - defaults to Render hosted backend
 const env = (import.meta as any).env;
 export const API_BASE_URL: string =
-  (env && env.VITE_API_URL) || "https://quizforge-7c83.onrender.com";
+  (env && env.VITE_API_URL) || "https://quizforge-1-deho.onrender.com";
+
 
 export interface ApiResponse<T = any> {
   ok: boolean;
